@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: avatar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: avatar
+  template:
+    metadata:
+      labels:
+        app: avatar
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: avatar
+        image: carlodelgado/huawei-avatar:latest
+        env:
+        - name: FOO
+          value: "bar"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
+          name: avatar
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: avatar
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: avatar

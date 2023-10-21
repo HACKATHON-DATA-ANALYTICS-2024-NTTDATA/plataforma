@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acravatar-localdocker-deployment
+  labels:
+    app: acravatar-localdocker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acravatar-localdocker
+  template:
+    metadata:
+      labels:
+        app: acravatar-localdocker
+    spec:
+      containers:
+        - name: acravatar-localdocker
+         # image: __DOCKER_REPOSITORY__/__IMAGE_NAME__:__IMAGE_TAG__
+          image: aksforacrcoderpath.azurecr.io/coderpath/aks-ms-avatar:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+          limits:
+            cpu: 300m
+            memory: "100Mi"
+          requests:
+            cpu: 100m
+            memory: "50Mi"
