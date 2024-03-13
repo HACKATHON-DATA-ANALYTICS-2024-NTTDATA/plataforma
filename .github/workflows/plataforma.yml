@@ -40,4 +40,4 @@ jobs:
           context: ./cursos
           file: ./cursos/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/huawei-plataforma:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/plataforma:latest

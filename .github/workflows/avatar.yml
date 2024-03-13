@@ -41,4 +41,4 @@ jobs:
           context: ./Samples/TypeScript/Demo
           file: ./Samples/TypeScript/Demo/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/huawei-avatar:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/avatar:latest

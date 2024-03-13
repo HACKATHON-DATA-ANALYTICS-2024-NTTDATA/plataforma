@@ -9,13 +9,13 @@ import { Alumno } from '../models/alumno';
 })
 export class AlumnoService {
 
-  private baseEndpoint = 'localhost:8090/api/alumnowebflux';
+  private baseEndpoint = 'http://localhost:8090/api/alumno';
   private cabeceras: HttpHeaders = new HttpHeaders({'ContentType': 'application/json'});
 
   constructor(private http: HttpClient) { }
 
   public  listar (): Observable<Alumno[]>{
-   return this.http.get<Alumno[]>(this.baseEndpoint);
+   return this.http.get<Alumno[]>(this.baseEndpoint+"/all");
   }
 
   public listarpaguinas(page: string, size: string): Observable<any>{
