@@ -14,23 +14,26 @@ export class AlumnoService {
 
   constructor(private http: HttpClient) { }
 
-  public  listar (): Observable<Alumno[]>{
+  public  listar(): Observable<Alumno[]>{
    return this.http.get<Alumno[]>(this.baseEndpoint+"/all");
   }
 
-  public listarpaguinas(page: string, size: string): Observable<any>{
-    const params =new HttpParams()
+  public listarpaginas(page: string, size: string): Observable<any>{
+    const params = new HttpParams()
     .set('page', page)
     .set('size', size);
-return this.http.get<any>(`${this.baseEndpoint}/all`,{params: params});
+    return this.http.get<any>(`${this.baseEndpoint}/pagina`,{params: params});
   }
 
   public ver (id: number): Observable<Alumno>{
    return this.http.get<Alumno>(`${this.baseEndpoint}/${id}`);
   }
-  public  crear (alumno:Alumno): Observable<Alumno>{
-    return this.http.post<Alumno>(this.baseEndpoint,alumno, {headers: this.cabeceras});
+
+  public crear(alumno: Alumno): Observable<Alumno> {
+    return this.http.post<Alumno>(this.baseEndpoint, alumno,
+      { headers: this.cabeceras });
   }
+
  public editar (alumno:Alumno): Observable<Alumno>{
   return this.http.put<Alumno>(`${this.baseEndpoint}/${alumno.id}`,alumno,{headers: this.cabeceras});
  }

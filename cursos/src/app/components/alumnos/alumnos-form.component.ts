@@ -11,7 +11,7 @@ import { AlumnoService } from 'src/app/services/alumno.service';
 
 export class AlumnosFormComponent implements OnInit {
 
-  titulo = "Crear Alumnos";
+  titulo = "Formulario Alumnos";
   alumno: Alumno = new Alumno();
 
 constructor(private service: AlumnoService, private router: Router){}
@@ -19,11 +19,11 @@ constructor(private service: AlumnoService, private router: Router){}
 ngOnInit() {}
 
 
-public crear(): void{
+public crear(): void {
   this.service.crear(this.alumno).subscribe(alumno =>{
     console.log(alumno);
     alert(`Alumno ${alumno.nombre} creado con éxitos`);
-    this.router.navigate(['/alumnos']);
+    this.router.navigate(['/create-student']);
 
   })
 }
