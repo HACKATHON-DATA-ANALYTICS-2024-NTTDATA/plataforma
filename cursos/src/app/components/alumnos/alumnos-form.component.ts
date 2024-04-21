@@ -23,7 +23,7 @@ public crear(): void {
   this.service.crear(this.alumno).subscribe(alumno =>{
     console.log(alumno);
     alert(`Alumno ${alumno.nombre} creado con éxitos`);
-    this.router.navigate(['/alumno']);
+    this.router.navigate(['/create-student']);
 
   })
 }
