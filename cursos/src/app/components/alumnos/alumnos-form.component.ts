@@ -16,14 +16,14 @@ export class AlumnosFormComponent implements OnInit {
 
 constructor(private service: AlumnoService, private router: Router){}
 
-ngOnInit() {}
+ngOnInit(){}
 
 
 public crear(): void {
   this.service.crear(this.alumno).subscribe(alumno =>{
     console.log(alumno);
-    alert(`Alumno ${alumno.nombre} creado con éxitos`);
-    this.router.navigate(['/create-student']);
+    alert(`Alumno creado con éxitos`);
+    this.router.navigate(['/alumnos']);
 
   })
 }
