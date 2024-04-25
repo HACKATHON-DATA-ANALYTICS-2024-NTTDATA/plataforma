@@ -18,7 +18,6 @@ constructor(private service: AlumnoService, private router: Router){}
 
 ngOnInit(){}
 
-
 public crear(): void {
   this.service.crear(this.alumno).subscribe(alumno =>{
     console.log(alumno);
