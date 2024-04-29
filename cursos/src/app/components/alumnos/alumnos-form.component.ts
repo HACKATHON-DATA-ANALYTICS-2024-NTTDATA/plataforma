@@ -24,7 +24,7 @@ public crear(): void {
     alert(`Alumno creado con éxitos`);
     this.router.navigate(['/alumnos']);
 
-  })
+  });
 }
 
 }
