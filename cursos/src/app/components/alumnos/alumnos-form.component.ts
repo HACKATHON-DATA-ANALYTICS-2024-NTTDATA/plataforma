@@ -11,7 +11,7 @@ import { AlumnoService } from 'src/app/services/alumno.service';
 
 export class AlumnosFormComponent implements OnInit {
 
-  titulo = "Formulario Alumnos";
+  titulo = "Nuevo Alumno";
   alumno: Alumno = new Alumno();
 
 constructor(private service: AlumnoService, private router: Router){}

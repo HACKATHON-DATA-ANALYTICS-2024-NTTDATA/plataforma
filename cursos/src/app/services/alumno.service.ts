@@ -10,7 +10,7 @@ import { Alumno } from '../models/alumno';
 export class AlumnoService {
 
   private baseEndpoint = 'http://localhost:8090/api/alumno';
-  private cabeceras: HttpHeaders = new HttpHeaders({'ContentType': 'application/json'});
+  private cabeceras: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient) { }
 
@@ -18,20 +18,19 @@ export class AlumnoService {
    return this.http.get<Alumno[]>(this.baseEndpoint+"/all");
   }
 
-  public listarpaginas(page: string, size: string): Observable<any>{
+  /*public listarpaginas(page: string, size: string): Observable<any>{
     const params = new HttpParams()
     .set('page', page)
     .set('size', size);
     return this.http.get<any>(`${this.baseEndpoint}/pagina`,{params: params});
-  }
+  }*/
 
   public ver (id: number): Observable<Alumno>{
    return this.http.get<Alumno>(`${this.baseEndpoint}/${id}`);
   }
 
   public crear(alumno: Alumno): Observable<Alumno> {
-    return this.http.post<Alumno>(this.baseEndpoint, alumno,
-      { headers: this.cabeceras });
+    return this.http.post<Alumno>(this.baseEndpoint, alumno, { headers: this.cabeceras });
   }
 
  public editar (alumno:Alumno): Observable<Alumno>{
