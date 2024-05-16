@@ -4,7 +4,7 @@
 
 
 
-[![Watch the video](https://github.com/HACKATHON-DATA-ANALYTICS-2024-NTTDATA/eurekaserver/blob/master/src/main/resources/fotocreador/data-analitc.jpg)](https://www.youtube.com/watch?v=nOkM3ZJciJE&t)
+[![Watch the video](https://github.com/HACKATHON-DATA-ANALYTICS-2024-NTTDATA/eurekaserver/blob/master/src/main/resources/fotocreador/data-analitc.jpg)](https://youtu.be/PckdSJ7wAWM?si=6jgesWXyUpyECkCB)
 
 ---
 
