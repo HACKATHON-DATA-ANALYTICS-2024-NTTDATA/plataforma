@@ -21,7 +21,7 @@ ngOnInit(){}
 public crear(): void {
   this.service.crear(this.alumno).subscribe(alumno =>{
     console.log(alumno);
-    alert(`Alumno creado con éxitos`);
+    alert(`Alumno creado con éxito`);
     this.router.navigate(['/alumnos']);
 
   });
