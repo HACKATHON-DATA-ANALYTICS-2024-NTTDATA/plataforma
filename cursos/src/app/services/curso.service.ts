@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Curso } from '../models/curso';
@@ -8,6 +9,8 @@ import { Curso } from '../models/curso';
   providedIn: 'root'
 })
 export class CursoService {
+
+ // cursoURL = environment.apiResrURL + '/api/cursos';
 
   private baseEndpoint = 'localhost:8090/api/cursos';
   private cabeceras: HttpHeaders = new HttpHeaders({'ContentType': 'application/json'});
@@ -25,7 +28,7 @@ export class CursoService {
 return this.http.get<any>(`${this.baseEndpoint}/all`,{params: params});
   }
 
-  public ver (id: number): Observable<Curso>{
+  public ver (id: string): Observable<Curso>{
    return this.http.get<Curso>(`${this.baseEndpoint}/${id}`);
   }
   public  crear (curso:Curso): Observable<Curso>{
@@ -34,7 +37,23 @@ return this.http.get<any>(`${this.baseEndpoint}/all`,{params: params});
  public editar (curso:Curso): Observable<Curso>{
   return this.http.put<Curso>(`${this.baseEndpoint}/${curso.id}`,curso,{headers: this.cabeceras});
  }
-public eliminar (id: number): Observable<void>{
+  public eliminar (id: string): Observable<void>{
   return this.http.delete<void>(`${this.baseEndpoint}/${id}`);
+  }
+  public list(): Observable<Curso[]> {
+    return this.http.get<Curso[]>(this.baseEndpoint);
+  }
+
+  public detail(id: string): Observable<Curso> {
+    return this.http.get<Curso>(this.baseEndpoint + `/${id}`);
+  }
+
+  public create(curso: Curso): Observable<any> {
+    return this.http.post<any>(this.baseEndpoint, curso);
+  }
+
+  public update(id: string, curso: Curso): Observable<any> {
+    return this.http.put<any>(this.baseEndpoint + `/${id}`, curso);
+  }
 }
-}
+

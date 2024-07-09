@@ -11,17 +11,39 @@ import { LayoutModule } from './layout/layout.module';
 import { AlumnosFormComponent } from './components/alumnos/alumnos-form.component';
 import { FormsModule } from '@angular/forms';
 
+
+//components
+import { ListComponent } from './components/cursos/list.component';
+import { DetailComponent } from './components/cursos/detail.component';
+import { CreateComponent } from './components/cursos/create.component';
+import { UpdateComponent } from './components/cursos/update.component';
+
+
+// external
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     AlumnosComponent,
     CursosComponent,
     ExamenesComponent,
-    AlumnosFormComponent
+    AlumnosFormComponent,
+    ListComponent,
+    DetailComponent,
+    CreateComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SweetAlert2Module.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     LayoutModule,
     HttpClientModule,
     FormsModule
