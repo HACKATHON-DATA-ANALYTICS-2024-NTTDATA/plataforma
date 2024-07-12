@@ -8,6 +8,7 @@ import { DetailComponent } from './components/cursos/detail.component';
 import { ListComponent } from './components/cursos/list.component';
 import { ExamenesComponent } from './components/examenes/examenes.component';
 import { AlumnosFormComponent } from './components/alumnos/alumnos-form.component';
+import { CursosFormComponent } from './components/cursos/cursos-form.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'Cursos'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'alumnos/form', component: AlumnosFormComponent},
   {path: 'alumnos/form/id', component: AlumnosFormComponent},
   {path: 'cursos', component: CursosComponent},
+  {path: 'cursos/form', component: CursosFormComponent},
   {path: 'listcursos', component: ListComponent},
   {path: 'detail', component: DetailComponent},
   {path: 'create', component: CreateComponent},

@@ -21,10 +21,10 @@ export class DetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getProduct();
+    this.getCurso();
   }
 
-  getProduct(): void {
+  getCurso(): void {
     //const id: string = this.activatedRoute.snapshot.params.id;
 
     const id = String(this.activatedRoute.snapshot.paramMap.get('id'));

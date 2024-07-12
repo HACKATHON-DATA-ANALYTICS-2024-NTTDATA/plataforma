@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { CursosComponent } from './components/cursos/cursos.component';
+import { CursosFormComponent } from './components/cursos/cursos-form.component';
 import { ExamenesComponent } from './components/examenes/examenes.component';
 import { LayoutModule } from './layout/layout.module';
 import { AlumnosFormComponent } from './components/alumnos/alumnos-form.component';
@@ -33,6 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
     CursosComponent,
     ExamenesComponent,
     AlumnosFormComponent,
+    CursosFormComponent,
     ListComponent,
     DetailComponent,
     CreateComponent,

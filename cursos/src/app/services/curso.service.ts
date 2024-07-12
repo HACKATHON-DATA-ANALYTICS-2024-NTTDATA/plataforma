@@ -12,13 +12,13 @@ export class CursoService {
 
  // cursoURL = environment.apiResrURL + '/api/cursos';
 
-  private baseEndpoint = 'localhost:8090/api/cursos';
+  private baseEndpoint = 'http://localhost:8090/api/cursos';
   private cabeceras: HttpHeaders = new HttpHeaders({'ContentType': 'application/json'});
 
   constructor(private http: HttpClient) { }
 
   public  listar (): Observable<Curso[]>{
-   return this.http.get<Curso[]>(this.baseEndpoint);
+   return this.http.get<Curso[]>(this.baseEndpoint+"/all");
   }
 
   public listarpaguinas(page: string, size: string): Observable<any>{
@@ -41,11 +41,11 @@ return this.http.get<any>(`${this.baseEndpoint}/all`,{params: params});
   return this.http.delete<void>(`${this.baseEndpoint}/${id}`);
   }
   public list(): Observable<Curso[]> {
-    return this.http.get<Curso[]>(this.baseEndpoint);
+    return this.http.get<Curso[]>(`${this.baseEndpoint}/all`);
   }
 
   public detail(id: string): Observable<Curso> {
-    return this.http.get<Curso>(this.baseEndpoint + `/${id}`);
+    return this.http.get<Curso>(this.baseEndpoint + '/id'+`/${id}`);
   }
 
   public create(curso: Curso): Observable<any> {

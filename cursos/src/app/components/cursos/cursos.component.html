@@ -1,3 +1,29 @@
+<div class="card bg-light mb-3">
+  <div class="card-header">{{titulo}}</div>
+  <div class="card-body">
+      <button class="btn btn-primary my-2" routerLink="/cursos/form">crear</button>
+      <table class="table table-hover table-stripe">
+          <thead >
+              <tr>
+                  <th>id</th>
+                  <th>nombre</th>
+                  <th>creado en</th>
+              </tr>
+          </thead>
+          <tbody>
+                <tr *ngFor="let curso of cursos">
+                  <td>{{curso.id}}</td>
+                  <td>{{curso.nombre}}</td>
+                  <td>{{curso.createAt | date:'YYYY/MM/dd'}}</td>
+                </tr>
+          </tbody>
+      </table>
+   </div>
+</div>
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">CRUD Cursos</a>
@@ -7,7 +33,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/"><i class="fa-solid fa-house-chimney-window"></i> Home</a>
+          <a class="nav-link" routerLink="/listcursos"><i class="fa-solid fa-house-chimney-window"></i> Home</a>
         </li>
 
       </ul>
