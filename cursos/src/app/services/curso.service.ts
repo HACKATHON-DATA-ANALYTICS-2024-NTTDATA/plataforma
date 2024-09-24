@@ -55,5 +55,9 @@ return this.http.get<any>(`${this.baseEndpoint}/all`,{params: params});
   public update(id: string, curso: Curso): Observable<any> {
     return this.http.put<any>(this.baseEndpoint + `/${id}`, curso);
   }
+
+  public delete(id: string): Observable<any> {
+    return this.http.delete<any>(this.baseEndpoint + `/${id}`);
 }
 
+}
