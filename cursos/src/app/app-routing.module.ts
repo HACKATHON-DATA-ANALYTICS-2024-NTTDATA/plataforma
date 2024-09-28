@@ -18,9 +18,9 @@ const routes: Routes = [
   {path: 'cursos', component: CursosComponent},
   {path: 'cursos/form', component: CursosFormComponent},
   {path: 'listcursos', component: ListComponent},
-  {path: 'detail', component: DetailComponent},
+  {path: 'detail/:id', component: DetailComponent},
   {path: 'create', component: CreateComponent},
-  {path: 'update', component: UpdateComponent},
+  {path: 'update/:id/:nombre/:createAt', component: UpdateComponent},
 
   {path: 'examenes', component: ExamenesComponent}
 ];

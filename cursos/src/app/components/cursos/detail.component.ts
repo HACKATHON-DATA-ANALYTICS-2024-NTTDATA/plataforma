@@ -24,21 +24,23 @@ export class DetailComponent implements OnInit {
     this.getCurso();
   }
 
+
+
+
   getCurso(): void {
-    //const id: string = this.activatedRoute.snapshot.params.id;
-
-    const id = String(this.activatedRoute.snapshot.paramMap.get('id'));
-
-    this.cursoService.detail(id).subscribe(
-      data => {
-        this.curso = data;
-        console.log(this.curso);
-      },
-      err => {
-        this.toast.error(err.error.message, 'Error', { timeOut: 3000, positionClass: 'toast-top-center'});
-        this.router.navigate(['']);
-      }
-    );
-  }
+    this.activatedRoute.paramMap.subscribe(params => {
+       const id = params.get('id');
+       this.cursoService.detail(id).subscribe(
+         data => {
+           this.curso = data;
+           console.log(this.curso);
+         },
+         err => {
+           this.toast.error(err.error.message, 'Error', { timeOut: 3000, positionClass: 'toast-top-center'});
+           this.router.navigate(['']);
+         }
+       );
+     });
+   }
 
 }
