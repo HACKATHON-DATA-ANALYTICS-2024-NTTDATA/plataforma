@@ -5,6 +5,8 @@ import { Curso } from 'src/app/models/curso';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { StorageService } from 'src/app/services/storage.service';
+import { MessageService } from 'src/app/services/message.service';
+
 
 @Component({
   selector: 'app-list',
@@ -19,7 +21,8 @@ export class ListComponent implements OnInit {
     private cursoService: CursoService,
     private toast: ToastrService,
     private storageService: StorageService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService,
   ) { }
 
   ngOnInit(): void {
@@ -73,16 +76,9 @@ export class ListComponent implements OnInit {
     this.storageService.setCurso(curso);
     this.router.navigate(['/update']);
   }
-
-
-
-
-
-
-
-
-
-
-
+  sendMessageCurso(curso: Curso): void {
+    this.messageService.sendMessage(curso);
+    this.router.navigate(['/update']);
+  }
 
 }

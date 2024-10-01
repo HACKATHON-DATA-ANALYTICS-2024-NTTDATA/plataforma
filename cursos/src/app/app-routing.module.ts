@@ -20,8 +20,8 @@ const routes: Routes = [
   {path: 'listcursos', component: ListComponent},
   {path: 'detail/:id', component: DetailComponent},
   {path: 'create', component: CreateComponent},
-  {path: 'update/:id/:nombre/:createAt', component: UpdateComponent},
-
+  //{path: 'update/:id/:nombre/:createAt', component: UpdateComponent},
+  {path: 'update', component: UpdateComponent},
   {path: 'examenes', component: ExamenesComponent}
 ];
 
