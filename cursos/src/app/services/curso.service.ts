@@ -28,16 +28,18 @@ export class CursoService {
 return this.http.get<any>(`${this.baseEndpoint}/all`,{params: params});
   }
 
-  public ver (id: string): Observable<Curso>{
-   return this.http.get<Curso>(`${this.baseEndpoint}/${id}`);
+  public ver(id: string): Observable<Curso>{
+  // return this.http.get<Curso>(`${this.baseEndpoint}/id/${id}`);
+  return this.http.get<Curso>(this.baseEndpoint + '/id'+`/${id}`);
   }
-  public  crear (curso:Curso): Observable<Curso>{
-    return this.http.post<Curso>(this.baseEndpoint,curso, {headers: this.cabeceras});
+  public  crear(curso:Curso): Observable<Curso>{
+ //   return this.http.post<Curso>(`${this.baseEndpoint}/create-cursos`, curso, {headers: this.cabeceras});
+    return this.http.post<Curso>(`${this.baseEndpoint}/create-cursos`, curso);
   }
- public editar (curso:Curso): Observable<Curso>{
-  return this.http.put<Curso>(`${this.baseEndpoint}/update-cursos/${curso.id}`,curso,{headers: this.cabeceras});
+ public editar(id: string,curso:Curso): Observable<Curso>{
+  return this.http.put<any>(this.baseEndpoint + `/update-cursos`+`/${id}`, curso);
  }
-  public eliminar (id: string): Observable<void>{
+  public eliminar(id: string): Observable<void>{
   return this.http.delete<void>(`${this.baseEndpoint}/delete-cursos/${id}`);
   }
   public list(): Observable<Curso[]> {

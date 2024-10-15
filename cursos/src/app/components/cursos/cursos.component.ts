@@ -21,4 +21,14 @@ export class CursosComponent implements OnInit {
     });
   }
 
+public eliminar(curso: Curso): void{
+
+  if(confirm(' ¿Seguro que desea elminar a ${curso.nombre} ?')){
+    this.service.eliminar(curso.id).subscribe(() => {
+      this.cursos = this.cursos.filter(a => a !== curso)
+      alert('curso ${curso.nombre} eliminado con exito');
+    })
+  }
+};
+
 }

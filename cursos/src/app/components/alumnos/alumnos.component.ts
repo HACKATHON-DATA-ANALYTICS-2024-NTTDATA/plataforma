@@ -19,4 +19,14 @@ export class AlumnosComponent implements OnInit {
     });
   }
 
+  public eliminar(alumno: Alumno): void{
+
+    if(confirm(' ¿Seguro que desea elminar a '+ alumno.nombre +'?')){
+      this.service.eliminar(alumno.id).subscribe(() => {
+        this.alumnos = this.alumnos.filter(a => a !== alumno)
+        alert('alumno '+ alumno.nombre+ ' eliminado con exito');
+      })
+    }
+  };
+
 }

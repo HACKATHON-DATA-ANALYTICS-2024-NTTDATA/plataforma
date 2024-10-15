@@ -8,6 +8,8 @@
                   <th>id</th>
                   <th>nombre</th>
                   <th>creado en</th>
+                  <th>Editar</th>
+                  <th>Eliminar</th>
               </tr>
           </thead>
           <tbody>
@@ -15,6 +17,9 @@
                   <td>{{curso.id}}</td>
                   <td>{{curso.nombre}}</td>
                   <td>{{curso.createAt | date:'YYYY/MM/dd'}}</td>
+                 <td> <button class="btn btn-secondary btn-sm" [routerLink]="['/cursos/form',curso.id]">editar</button></td>
+                 <td><button class="btn btn-danger btn-sm"
+                   (click)="eliminar(curso)">eliminar</button></td>
                 </tr>
           </tbody>
       </table>
