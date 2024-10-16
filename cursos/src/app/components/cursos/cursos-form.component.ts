@@ -61,8 +61,8 @@ public crear(): void {
 }
 
 public editar(): void {
-  const cursox = new Curso(this.nombre, this.createAt);
-  this.service.editar(this.curso.id,cursox).subscribe(curso =>{
+ const cursox = new Curso(this.nombre, this.createAt);
+  this.service.editar(this.curso).subscribe(curso =>{
     console.log(curso);
     alert(`Curso actualizado con éxito`);
     this.router.navigate(['/cursos']);
