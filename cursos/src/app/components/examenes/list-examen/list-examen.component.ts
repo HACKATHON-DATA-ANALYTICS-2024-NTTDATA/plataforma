@@ -72,13 +72,13 @@ export class ListExamenComponent implements OnInit {
     });
   }
 
-  setCurso(examen: Examen): void {
+  setExamen(examen: Examen): void {
     this.storageService.setExamen(examen);
-    this.router.navigate(['/update']);
+    this.router.navigate(['/updateexamen']);
   }
   sendMessageExamen(examen: Examen): void {
     this.messageService.sendMessageExamen(examen);
-    this.router.navigate(['/update']);
+    this.router.navigate(['/updateexamen']);
   }
 
 }

@@ -13,7 +13,7 @@
             <th>{{examen.id}}</th>
             <td>{{examen.nombre}}</td>
             <td>{{examen.createAt  | date:'YYYY/MM/dd' }} </td>
-            <td><button class="btn btn-outline-primary" routerLink="/detail/{{examen.id}}"><i class="far fa-eye"></i> View</button></td>
+            <td><button class="btn btn-outline-primary" routerLink="/detailexamen/{{examen.id}}"><i class="far fa-eye"></i> View</button></td>
             <td><button class="btn btn-outline-warning"  (click)="sendMessageExamen(examen)"><i class="far fa-edit"></i> Edit</button></td>
             <td><button class="btn btn-outline-danger" (click)="onDelete(examen.id)"><i class="far fa-trash-alt"></i> Delete</button></td>
           </tr>
@@ -21,8 +21,8 @@
         </tbody>
       </table>
       <div class="mt-3">
-          <button class="btn btn-outline-success btn-lg" routerLink="/create">
-            <i class="fas fa-plus-circle"></i> Agregar nuevo curso
+          <button class="btn btn-outline-success btn-lg" routerLink="/createexamen">
+            <i class="fas fa-plus-circle"></i> Agregar nuevo Examen
           </button>
       </div>
 </div>
