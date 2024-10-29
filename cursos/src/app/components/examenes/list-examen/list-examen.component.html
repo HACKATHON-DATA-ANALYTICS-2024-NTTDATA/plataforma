@@ -15,7 +15,7 @@
             <td>{{examen.createAt  | date:'YYYY/MM/dd' }} </td>
             <td><button class="btn btn-outline-primary" routerLink="/detailexamen/{{examen.id}}"><i class="far fa-eye"></i> View</button></td>
             <td><button class="btn btn-outline-warning"  (click)="sendMessageExamen(examen)"><i class="far fa-edit"></i> Edit</button></td>
-            <td><button class="btn btn-outline-danger" (click)="onDelete(examen.id)"><i class="far fa-trash-alt"></i> Delete</button></td>
+            <td><button class="btn btn-outline-danger" (click)="onDeleteExamen(examen.id)"><i class="far fa-trash-alt"></i> Delete</button></td>
           </tr>
 
         </tbody>

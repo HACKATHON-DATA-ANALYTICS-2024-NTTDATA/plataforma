@@ -13,11 +13,22 @@ import { AlumnosFormComponent } from './components/alumnos/alumnos-form.componen
 import { FormsModule } from '@angular/forms';
 
 
-//components
+//components Cursos
 import { ListComponent } from './components/cursos/list.component';
 import { DetailComponent } from './components/cursos/detail.component';
 import { CreateComponent } from './components/cursos/create.component';
 import { UpdateComponent } from './components/cursos/update.component';
+
+
+//components Examenes
+import { UpdateExamenComponent } from './components/examenes/update-examen/update-examen.component';
+import { CreateExamenComponent } from './components/examenes/create-examen/create-examen.component';
+import { DetailExamenComponent } from './components/examenes/detail-examen/detail-examen.component';
+import { ListExamenComponent } from './components/examenes/list-examen/list-examen.component';
+
+
+
+
 
 
 // external
@@ -38,7 +49,12 @@ import { DatePipe } from '@angular/common'
     ListComponent,
     DetailComponent,
     CreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    UpdateExamenComponent,
+    CreateExamenComponent,
+    DetailExamenComponent,
+    ListExamenComponent
+
   ],
   imports: [
     BrowserModule,

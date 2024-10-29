@@ -3,7 +3,7 @@
     <div class="row mt-5">
         <div class="col-md-4 mx-auto">
             <h4 class="text-center">Update Examen</h4>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <form (ngSubmit)="onUpdateExamen()" novalidate #f="ngForm">
                 <div class="mb-3">
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Examen nombre"
                         autocomplete="off" required [(ngModel)]="nombre">

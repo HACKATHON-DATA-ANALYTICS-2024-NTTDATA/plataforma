@@ -9,6 +9,14 @@ import { ListComponent } from './components/cursos/list.component';
 import { ExamenesComponent } from './components/examenes/examenes.component';
 import { AlumnosFormComponent } from './components/alumnos/alumnos-form.component';
 import { CursosFormComponent } from './components/cursos/cursos-form.component';
+import { UpdateExamenComponent } from './components/examenes/update-examen/update-examen.component';
+import { CreateExamenComponent } from './components/examenes/create-examen/create-examen.component';
+import { DetailExamenComponent } from './components/examenes/detail-examen/detail-examen.component';
+import { ListExamenComponent } from './components/examenes/list-examen/list-examen.component';
+
+
+
+
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'Cursos'},
@@ -23,7 +31,12 @@ const routes: Routes = [
   {path: 'create', component: CreateComponent},
   //{path: 'update/:id/:nombre/:createAt', component: UpdateComponent},
   {path: 'update', component: UpdateComponent},
-  {path: 'examenes', component: ExamenesComponent}
+  {path: 'examenes', component: ExamenesComponent},
+  {path: 'listexamenes', component: ListExamenComponent},
+  {path: 'detailexamen/:id', component: DetailExamenComponent},
+  {path: 'createexamen', component: CreateExamenComponent},
+  {path: 'updateexamen', component: UpdateExamenComponent}
+
 ];
 
 @NgModule({

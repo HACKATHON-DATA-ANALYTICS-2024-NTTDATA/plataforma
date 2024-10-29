@@ -43,7 +43,7 @@ export class ListExamenComponent implements OnInit {
 
 
 
-  onDelete(id: string): void {
+  onDeleteExamen(id: string): void {
     Swal.fire({
       title: 'Are you sure?',
       text: 'You cannot undo',

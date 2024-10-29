@@ -14,7 +14,7 @@ import { MessageService } from 'src/app/services/message.service';
 })
 export class UpdateExamenComponent implements OnInit {
 
-   id!: string;
+   //id!: string;
    examen!: Examen;
    nombre!: string;
    createAt!: Date;
@@ -35,11 +35,11 @@ export class UpdateExamenComponent implements OnInit {
      this.getExamen();
    }
 
-   onUpdate(): void {
-     const examenx = new Examen();
+   onUpdateExamen(): void {
+     const examenx = new Examen(this.nombre, this.createAt);
 
   //   this.cursoService.update(this.id, cursox).subscribe(
-   this.examenService.update(this.examen.id, this.examen).subscribe(
+   this.examenService.update(this.examen.id, examenx).subscribe(
        data => {
          this.toast.success(data.message, 'OK', { timeOut: 3000, positionClass: 'toast-top-center'});
          this.router.navigate(['']);
