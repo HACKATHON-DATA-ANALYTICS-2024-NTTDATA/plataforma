@@ -23,7 +23,7 @@ export class CreateExamenComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCreate(): void {
+  onCreateExamen(): void {
     const examen = new Examen(this.nombre, this.createAt);
     this.examenService.create(examen).subscribe(
       data => {

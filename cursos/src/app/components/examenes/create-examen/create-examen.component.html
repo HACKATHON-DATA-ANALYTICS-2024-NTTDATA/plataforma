@@ -1,1 +1,24 @@
-<p>create-examen works!</p>
+<app-examenes></app-examenes>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4 mx-auto">
+          <h4 class="text-center">Create Examen</h4>
+          <form (ngSubmit)="onCreateExamen()" novalidate #f="ngForm">
+              <div class="mb-3">
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="examen nombre"
+                      autocomplete="off" required [(ngModel)]="nombre">
+              </div>
+              <div class="mb-3">
+                  <input type="date" class="form-control" id="createAt" name="createAt" placeholder="examen createAt"
+                      autocomplete="off" required [(ngModel)]="createAt">
+              </div>
+              <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
+                  <i class="fas fa-plus-circle"></i> Create
+              </button>
+              <button class="btn btn-outline-primary w-100" routerLink="/">
+                  <i class="fas fa-arrow-alt-circle-left"></i> Back
+              </button>
+          </form>
+      </div>
+  </div>
+</div>
